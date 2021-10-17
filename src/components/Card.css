@@ -1,8 +1,8 @@
 .card {
   border: 8px solid cyan;
   border-radius: 20px;
-  width: 20rem;
-  height: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
