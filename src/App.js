@@ -1,7 +1,10 @@
+import React from "react";
+import Card from "./components/Card";
+
 function App() {
   return (
     <div className="App">
-      Hello World!
+      <Card path={process.env.PUBLIC_URL + 'img/cards/hakos-baelz.webp'} name="Hakos Baelz"/>
     </div>
   );
 }

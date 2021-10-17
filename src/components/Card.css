@@ -1,0 +1,19 @@
+.card {
+  border: 8px solid cyan;
+  border-radius: 20px;
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card > img {
+  width: 90%;
+  height: 90%;
+}
+
+.card > p {
+  font-weight: 800;
+}
