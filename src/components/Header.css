@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.header > .scoreboard {
+  display: fixed;
+}
