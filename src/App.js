@@ -15,24 +15,38 @@ function App() {
     setCards(shuffleList(cards));
   }, []);
 
+  useEffect(() => {
+    if(score > highscore) setHighscore(score);
+  }, [score]);
+
   return (
     <div className="app">
-      <Header
-        score={score}
-        highscore={highscore}
-        resetGame = {resetGame}
-      />
+      <Header score={score} highscore={highscore} resetGame={resetGame} />
       <div className="cards">
         {cards.map((card) => (
           <Card
-            key={card.fileName}
+            key={card.id}
+            id={card.id}
             path={process.env.PUBLIC_URL + "cards/" + card.fileName}
             name={card.name}
+            resolveCard={resolveCard}
           />
         ))}
       </div>
     </div>
   );
+
+  // Takes a cardId and performs actions depending on whether that card has been chosen before
+  function resolveCard(cardId) {
+    if (selectedCards.find((e) => e.id === cardId) === undefined) {
+      const card = cards.find(e => e.id === cardId);
+      setSelectedCards([...selectedCards, card]);
+      setScore(score + 1);
+      setCards(shuffleList(cards));
+    } else {
+      resetGame();
+    }
+  }
 
   function resetGame() {
     setCards(shuffleList(cards));
