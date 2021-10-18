@@ -1,13 +1,20 @@
 import React from "react";
 import Scoreboard from "./Scoreboard";
-import "./Header.css"
+import "./Header.css";
 
-function Header() {
+function Header(props) {
+  function resetHandler() {
+    const { cards, setCards, shuffleList } = props;
+    setCards(shuffleList(cards));
+  }
+
   return (
     <div className="header">
       <h1>Memory Game</h1>
       <Scoreboard score="0" highscore="10" />
-      <button type="button">Reset</button>
+      <button type="button" onClick={resetHandler}>
+        Reset
+      </button>
     </div>
   );
 }
