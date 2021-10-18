@@ -1,34 +1,42 @@
 {
   "cards": [
     {
+      "id": "0",
       "name": "Amelia Watson",
       "fileName": "0.webp"
     },
     {
+      "id": "1",
       "name": "Gawr Gura",
       "fileName": "1.webp"
     },
     {
+      "id": "2",
       "name": "Hakos Baelz",
       "fileName": "2.webp"
     },
     {
+      "id": "3",
       "name": "Inugami Korone",
       "fileName": "3.webp"
     },
     {
+      "id": "4",
       "name": "Momosuzu Nene",
       "fileName": "4.webp"
     },
     {
+      "id": "5",
       "name": "Mori Calliope",
       "fileName": "5.webp"
     },
     {
+      "id": "6",
       "name": "Ninomae Ina'nis",
       "fileName": "6.webp"
     },
     {
+      "id": "7",
       "name": "Takanashi Kiara",
       "fileName": "7.webp"
     }
