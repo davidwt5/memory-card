@@ -4,8 +4,7 @@ import "./Header.css";
 
 function Header(props) {
   function resetHandler() {
-    const { cards, setCards, shuffleList } = props;
-    setCards(shuffleList(cards));
+    props.shuffleCards();
   }
 
   return (

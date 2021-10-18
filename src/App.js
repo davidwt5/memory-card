@@ -9,12 +9,12 @@ function App() {
 
   // Shuffle cards once on startup
   useEffect(() => {
-    setCards(shuffleList(cards));
+    shuffleCards();
   }, []);
 
   return (
     <div className="app">
-      <Header cards={cards} setCards={setCards} shuffleList={shuffleList}/> 
+      <Header shuffleCards={shuffleCards}/> 
       <div className="cards">
         {cards.map((card) => (
           <Card
@@ -26,6 +26,10 @@ function App() {
       </div>
     </div>
   );
+
+  function shuffleCards() {
+    setCards(shuffleList(cards));
+  }
 
   function shuffleList(list) {
     let listCopy = Array.from(list);
