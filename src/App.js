@@ -6,12 +6,13 @@ import "./App.css";
 
 function App() {
   const [cards, setCards] = useState(db.cards);
+  const [selectedCards, setSelectedCards] = useState([]);
   const [score, setScore] = useState(0);
   const [highscore, setHighscore] = useState(0);
 
   // Shuffle cards once on startup
   useEffect(() => {
-    shuffleCards();
+    setCards(shuffleList(cards));
   }, []);
 
   return (
@@ -19,8 +20,7 @@ function App() {
       <Header
         score={score}
         highscore={highscore}
-        resetScore={resetScore}
-        shuffleCards={shuffleCards}
+        resetGame = {resetGame}
       />
       <div className="cards">
         {cards.map((card) => (
@@ -34,12 +34,10 @@ function App() {
     </div>
   );
 
-  function resetScore() {
-    setScore(0);
-  }
-
-  function shuffleCards() {
+  function resetGame() {
     setCards(shuffleList(cards));
+    setScore(0);
+    setSelectedCards([]);
   }
 
   function shuffleList(list) {
